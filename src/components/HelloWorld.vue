@@ -9,21 +9,40 @@
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Documentation</a>
   </p>
 
-  <button type="button" @click="state.count++">count is: {{ state.count }}</button>
+  <button type="button" @click="state.count++">
+    count is: {{ state.count }}
+  </button>
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
+  <button @click="emit('myClick')">click1</button>
+  <button @click="myClick">click2</button>
 </template>
 
 <script setup>
-import { defineProps, reactive } from 'vue'
+import { defineProps, reactive, defineEmit, useContext } from 'vue'
 
-defineProps({
-  msg: String
+const props = defineProps({
+  msg: String,
 })
+// console.log(props, 'props');
 
+// emit
+const emit = defineEmit(['myClick'])
+const myClick = () => {
+  emit('myClick')
+}
 const state = reactive({ count: 0 })
+
+// ctx
+const ctx = useContext();
+console.log(ctx, 'ctx');
+ctx.expose({
+  someMethod() {
+    console.log('some messgae from HelloWorld');
+  }
+})
 </script>
 
 <style scoped>
