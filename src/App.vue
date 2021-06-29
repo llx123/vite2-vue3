@@ -1,14 +1,16 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
+  <ComTest />
   <HelloWorld msg="Hello Vue 3 + Vite" @myClick="onmyclick" ref="hw" />
 </template>
 
 <script setup>
+import ComTest from '@/components/ComponentTest.vue'
 import HelloWorld from '@/components/HelloWorld.vue'
 import { defineProps, reactive, defineEmit, ref } from 'vue'
 
 // ref
-const hw = ref(null)
+const hw = ref(0)
 const onmyclick = () => {
   console.log('click msg')
   hw.value.someMethod()
