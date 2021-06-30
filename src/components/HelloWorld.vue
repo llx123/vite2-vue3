@@ -43,6 +43,13 @@ ctx.expose({
     console.log('some messgae from HelloWorld');
   }
 })
+
+// fetch
+fetch('/api/getUsers').then(res=>{
+  return res.json();
+}).then(data => {
+  console.error(data);
+})
 </script>
 
 <style scoped>
