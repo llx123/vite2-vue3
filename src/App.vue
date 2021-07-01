@@ -1,20 +1,11 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <ComTest />
-  <HelloWorld msg="Hello Vue 3 + Vite" @myClick="onmyclick" ref="hw" />
+  <router-view></router-view>
 </template>
 
 <script setup>
 import ComTest from '@/components/ComponentTest.vue'
 import HelloWorld from '@/components/HelloWorld.vue'
-import { defineProps, reactive, defineEmit, ref } from 'vue'
-
-// ref
-const hw = ref(0)
-const onmyclick = () => {
-  console.log('click msg')
-  hw.value.someMethod()
-}
 // This starter template is using Vue 3 experimental <script setup> SFCs
 // Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
 </script>
