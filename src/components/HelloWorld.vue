@@ -1,5 +1,5 @@
 <template>
-  <h1>{{ msg }}</h1>
+  <h1 class="red">{{ msg }}</h1>
   <p @click="$store.commit('add')">{{$store.state.counter}}</p>
   <p>
     <a href="https://vitejs.dev/guide/features.html" target="_blank">
@@ -17,7 +17,8 @@
     <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
   <button @click="emit('myClick')">click1</button>
-  <button @click="myClick">click2</button>
+  <el-button @click="myClick">click2</el-button>
+  <el-input></el-input>
 </template>
 
 <script setup>

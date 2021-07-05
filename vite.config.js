@@ -8,7 +8,9 @@ import { viteMockServe } from 'vite-plugin-mock'
 export default defineConfig({
   resolve: {
     alias: {
-      '@': resolve(__dirname, "src/")
+      '@': resolve(__dirname, "src/"),
+      styles: resolve(__dirname, "src/styles"),
+      plugins: resolve(__dirname, "src/plugins"),
     }
   },
   plugins: [vue(), vueJsx(), viteMockServe({ supportTs: false })]
